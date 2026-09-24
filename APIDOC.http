@@ -1,0 +1,45 @@
+
+#===========DOCTOR=============
+
+# api call for listing doctor details
+###
+GET http://127.0.0.1:8000/doctors/
+Accept: application/json
+
+# api call for listing doctor details
+###
+POST http://127.0.0.1:8000/doctors/
+Content-Type: application/json
+
+{
+    "name":"Ajna",
+    "specialization":"ent",
+    "fee":500,
+    "qualification":"MBBS",
+    "email":"ajna@gmail.com"
+}
+
+# api call for listing one doctor details
+###
+GET http://127.0.0.1:8000/doctors/1/
+Accept: application/json
+
+# api call for listing one doctor details
+###
+put http://127.0.0.1:8000/doctors/3/
+Content-Type: application/json
+
+{
+    "name":"peethambaran",
+    "specialization":"ent",
+    "fee":550,
+    "qualification":"MBBS",
+    "email":"peethambaran@gmail.com"
+}
+
+# api call for listing one doctor details
+###
+DELETE http://127.0.0.1:8000/doctors/2/
+Accept: application/json
+
+#===========APPOINMENT=============
