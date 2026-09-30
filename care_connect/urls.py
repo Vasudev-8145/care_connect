@@ -18,14 +18,20 @@ from django.contrib import admin
 from django.urls import path
 from staff.views import DoctorListCreateView,DoctorRetrieveUpdateDeleteView
 from staff_v2 import views
+from bookings.views import AppoinmentListCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("doctors/",DoctorListCreateView.as_view()),
 
+    # doctor route
+    path("doctors/",DoctorListCreateView.as_view()),
     path("doctors/<int:pk>/",DoctorRetrieveUpdateDeleteView.as_view()),
+
+    # doctor v2 route
     path("v2/doctors/",views.DoctorListCreateView.as_view()),
     path("v2/doctors/<int:pk>/",views.DoctorRetrieveUpdateDeleteView.as_view()),
-
     path("v2/admin-register/",views.UserCreateView.as_view()),
+
+    # appoinment route
+    path("appoinments/",AppoinmentListCreateView.as_view()),
 ]

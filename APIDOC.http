@@ -97,3 +97,13 @@ Content-Type: application/json
 }
 
 #===========APPOINMENT=============
+
+# api call for listing all apoinments
+### 
+GET http://127.0.0.1:8000/appoinments/
+Accept: application/json
+
+# api call for creating appoinments
+###
+POST http://127.0.0.1:8000/appoinments/
+Content-Type: application/json
