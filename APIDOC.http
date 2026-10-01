@@ -53,13 +53,14 @@ Accept: application/json
 ###
 POST http://127.0.0.1:8000/v2/doctors/
 Content-Type: application/json
+Authorization: Basic adminuser:admin
 
 {
-    "name":"chinaswammy",
+    "name":"ajna",
     "specialization":"ent",
     "fee":300,
     "qualification":"MBBS",
-    "email":"chinaswamy@gmail.com"
+    "email":"ajna@gmail.com"
 }
 
 # api call for listing one doctor details
@@ -107,3 +108,11 @@ Accept: application/json
 ###
 POST http://127.0.0.1:8000/appoinments/
 Content-Type: application/json
+
+{
+    "patient_name":"messi",
+    "phone":6282758776,
+    "doctor":3,
+    "appointment_date":"2026-10-1",
+    "problem":"ligament issue"
+}
