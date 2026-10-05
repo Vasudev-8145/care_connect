@@ -116,3 +116,16 @@ Content-Type: application/json
     "appointment_date":"2026-10-1",
     "problem":"ligament issue"
 }
+
+####### booking_v2 ##########
+
+# api call for creating authentication
+###
+POST http://127.0.0.1:8000/v2/booking/signup/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "email":"django@gmail.com",
+    "password":"django123"
+}
