@@ -129,3 +129,21 @@ Content-Type: application/json
     "email":"django@gmail.com",
     "password":"django123"
 }
+
+# api call for listing appointments
+###
+GET http://127.0.0.1:8000/v2/booking/appointmentv2/
+Accept: application/json
+
+# api call for creating appointment
+###
+POST http://127.0.0.1:8000/v2/booking/appointmentv2/
+Content-Type: application/json
+
+{
+    "patient_name":"ronaldo",
+    "phone":6282758776,
+    "doctor":1,
+    "appointment_date":"2026-10-07",
+    "problem":"ego issue"
+}

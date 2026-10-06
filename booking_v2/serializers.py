@@ -19,4 +19,6 @@ class AppointmetnSerializerv2(serializers.ModelSerializer):
 
         fields = "__all__"
 
+        read_only_fields = ["id","token_number","appointment_time","created_at"]
+
     
