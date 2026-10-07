@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import authentication,permissions
+from rest_framework.generics import RetrieveAPIView,UpdateAPIView,DestroyAPIView
 
 from booking_v2.serializers import SignUpSerializer,AppointmetnSerializerv2
 from bookings.models import Appointment
@@ -34,6 +36,9 @@ class SignUpView(APIView):
             return Response(data=serializer_instance.errors)
 
 class Appointmentv2ListCreateView(APIView):
+
+    authentication_classes = [authentication.BasicAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
 
     def get(self,request):
 
@@ -81,3 +86,13 @@ class Appointmentv2ListCreateView(APIView):
 
             return Response(data=serializer_instance.errors)
 
+class Appointmentv2RetreiveUpdateDeleteView(RetrieveAPIView,UpdateAPIView,DestroyAPIView):
+
+    authentication_classes = [authentication.BasicAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    serializer_class = AppointmetnSerializerv2
+
+    queryset = Appointment.objects.all()
+
+    
